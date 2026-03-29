@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const repoName = "My-Portfolio-Site"; // 👈 define it FIRST
+const isGHPages = process.env.DEPLOY_TARGET === "gh-pages";
 
 const nextConfig = {
   typescript: {
@@ -10,8 +11,8 @@ const nextConfig = {
   },
   devIndicators: false,
   output: "export",
-  basePath: `/${repoName}`,
-  assetPrefix: `/${repoName}/`,
+  basePath: isGHPages ? `/${repoName}` : "",
+  assetPrefix: isGHPages ? `/${repoName}/` : "",
 }
 
 export default nextConfig
