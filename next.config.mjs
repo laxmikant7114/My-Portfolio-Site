@@ -3,11 +3,13 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  output: "export",
   images: {
     unoptimized: true,
   },
   devIndicators: false,
+  output: "export",
+  basePath: `/${repoName}`,
+  assetPrefix: `/${repoName}/`,
 }
 
 export default nextConfig
